@@ -1,25 +1,23 @@
-pipeline{
+pipeline {
+    agent { label 'Java_Env' }
 
-agent any
+    stages {
 
-stages{
-stage('Checkout') {
+        stage('Checkout') {
             steps {
-                sh 'rm -rf *'
-               sh 'https://github.com/Mallesha3/parcel_service.git'
-              
+                cleanWs()
+                git branch: 'feature-1',
+                    url: 'https://github.com/Mallesha3/parcel_service.git'
             }
-   }
-  stage('Build') {
+        }
+
+        stage('Build') {
             steps {
-                    sh '''
-                    cd parcel_service
-                    git checkout feature-1
+                sh '''
                     pwd
                     mvn clean install
                 '''
             }
         }
-}
-
+    }
 }
