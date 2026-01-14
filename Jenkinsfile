@@ -20,15 +20,22 @@ pipeline {
             }
         }
         
-        stage('Run App (5 min)') {
-    steps {
-        timeout(time: 5, unit: 'MINUTES') {
-            sh '''
-                java -jar target/simple-parcel-service-app-1.0-SNAPSHOT.jar
-            '''
+//         stage('Run App (5 min)') {
+//     steps {
+//         timeout(time: 5, unit: 'MINUTES') {
+//             sh '''
+//                 java -jar target/simple-parcel-service-app-1.0-SNAPSHOT.jar
+//             '''
+//         }
+//     }
+// }
+         stage('Build') {
+            steps {
+                sh '''
+                    mvn clean deploy
+                '''
+            }
         }
-    }
-}
 
     }
 }
