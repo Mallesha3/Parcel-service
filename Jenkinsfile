@@ -29,7 +29,7 @@ pipeline {
 //         }
 //     }
 // }
-         stage('Build') {
+         stage('Deploy') {
             steps {
                 sh '''
                     mvn clean deploy
