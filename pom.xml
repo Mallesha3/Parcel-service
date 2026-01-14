@@ -37,7 +37,7 @@
         <url>http://52.66.228.1:8081/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
 </distributionManagement>
-<!-- 
+
     <build>
         <plugins>
             <plugin>
@@ -58,7 +58,7 @@
                 </configuration>
             </plugin>
         </plugins> 
-    </build> -->
+    </build>
 
          <parent>
     <groupId>org.springframework.boot</groupId>
