@@ -25,6 +25,18 @@
             <version>${spring.boot.version}</version>
         </dependency>
     </dependencies>
+
+         <distributionManagement>
+    <repository>
+        <id>artifactory-releases</id>
+        <url>http://52.66.228.1:8081/artifactory/libs-release-local</url>
+    </repository>
+
+    <snapshotRepository>
+        <id>artifactory-snapshots</id>
+        <url>http://52.66.228.1:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+</distributionManagement>
 <!-- 
     <build>
         <plugins>
