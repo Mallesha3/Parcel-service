@@ -31,6 +31,11 @@ pipeline {
 // }
          stage('Deploy') {
             steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'jfrog',
+                    usernameVariable: 'JFROG_USER',
+                    passwordVariable: 'JFROG_API_KEY'
+                )]) 
                 sh '''
                     mvn clean deploy
                 '''
